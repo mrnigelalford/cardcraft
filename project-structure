@@ -1,0 +1,86 @@
+cardcraft/
+├── src/
+│   ├── app/
+│   │   ├── (auth)/
+│   │   │   ├── login/
+│   │   │   │   └── page.tsx
+│   │   │   ├── signup/
+│   │   │   │   └── page.tsx
+│   │   │   └── layout.tsx
+│   │   ├── (dashboard)/
+│   │   │   ├── dashboard/
+│   │   │   │   └── page.tsx
+│   │   │   ├── settings/
+│   │   │   │   └── page.tsx
+│   │   │   └── layout.tsx
+│   │   ├── api/
+│   │   │   ├── auth/
+│   │   │   │   └── [...nextauth]/
+│   │   │   │       └── route.ts
+│   │   │   ├── contact/
+│   │   │   │   └── route.ts
+│   │   │   ├── stripe/
+│   │   │   │   └── webhook/
+│   │   │   │       └── route.ts
+│   │   │   └── zapier/
+│   │   │       └── webhook/
+│   │   │           └── route.ts
+│   │   ├── card/
+│   │   │   └── [username]/
+│   │   │       └── page.tsx
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── components/
+│   │   ├── auth/
+│   │   │   ├── LoginForm.tsx
+│   │   │   └── SignupForm.tsx
+│   │   ├── business-card/
+│   │   │   ├── BusinessCard.tsx
+│   │   │   ├── ContactForm.tsx
+│   │   │   └── SocialLinks.tsx
+│   │   ├── dashboard/
+│   │   │   ├── CardEditor.tsx
+│   │   │   └── Analytics.tsx
+│   │   ├── ui/
+│   │   │   ├── Button.tsx
+│   │   │   ├── Input.tsx
+│   │   │   └── Modal.tsx
+│   │   └── layout/
+│   │       ├── Header.tsx
+│   │       └── Footer.tsx
+│   ├── lib/
+│   │   ├── auth.ts
+│   │   ├── db.ts
+│   │   ├── stripe.ts
+│   │   └── zapier.ts
+│   ├── types/
+│   │   ├── auth.ts
+│   │   ├── business-card.ts
+│   │   └── api.ts
+│   ├── utils/
+│   │   ├── validation.ts
+│   │   └── formatting.ts
+│   └── styles/
+│       ├── globals.css
+│       └── components/
+│           ├── business-card.css
+│           └── forms.css
+├── public/
+│   ├── images/
+│   │   └── logo.svg
+│   └── icons/
+│       └── social/
+├── prisma/
+│   └── schema.prisma
+├── config/
+│   ├── site.ts
+│   └── constants.ts
+├── scripts/
+│   └── seed.ts
+├── .env.example
+├── .env.local
+├── package.json
+├── tsconfig.json
+├── next.config.js
+├── tailwind.config.ts
+└── README.md

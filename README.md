@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Card Craft - Digital Business Card Platform
 
-## Getting Started
+Create and share your professional digital business card in minutes. Connect with your network through a personalized landing page that showcases your profile, handles incoming contacts, and automates your networking.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Personalized Landing Page**
+  - Professional photo display
+  - Resume highlights
+  - Contact information
+  - Social media integration
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Smart Contact Management**
+  - Custom email form
+  - Automated contact creation in Google Contacts
+  - Calendar integration for meeting scheduling
+  - Newsletter subscription option
+  - Data export to Google Sheets
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Site Generation**
+  - Custom domain support
+  - Easy-to-use template system
+  - Mobile-responsive design
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Pricing Plans
 
-## Learn More
+### Free Trial
+- 14-day full access
+- All premium features included
+- No credit card required
 
-To learn more about Next.js, take a look at the following resources:
+### Basic - $4/month
+- Single business card
+- Basic analytics
+- Email form
+- Google Sheets integration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Professional - $9/month
+- Everything in Basic
+- Custom domain
+- Calendar integration
+- Newsletter integration
+- Advanced analytics
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Enterprise - $24/month
+- Everything in Professional
+- Multiple business cards
+- Priority support
+- Custom branding
+- API access
 
-## Deploy on Vercel
+## Technical Requirements
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Node.js 18+
+- React 18+
+- MongoDB
+- Google Cloud Platform account
+- Zapier account
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+Request:
+- follow up texts or customizations
+- calendar integration
+- newsletter integration
+- multiple business cards
+- custom domains
+- API access
+- digital prospecting??
+Max pay: $250
