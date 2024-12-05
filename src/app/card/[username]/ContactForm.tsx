@@ -46,7 +46,7 @@ export default function ContactForm({ onClose, client }: { onClose: () => void, 
       
       onClose();
     } catch (err) {
-      setError('Failed to submit form. Please try again.');
+      setError(`Failed to submit form. Please try again. ${err}`);
     } finally {
       setIsSubmitting(false);
     }

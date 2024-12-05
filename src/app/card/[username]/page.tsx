@@ -5,27 +5,39 @@ import Link from 'next/link';
 import ContactForm from './ContactForm';
 import { useState } from 'react';
 import { kv } from '@vercel/kv'
+import { BusinessCard } from '@/lib/db';
 
-type Props = {
-  params: {
-    username: string;
-  };
-};
+// Define the params interface
+type PageParams = { username: string }
 
-async function getBusinessCard(username: string) {
+type UserCard = BusinessCard & {
+  email: string;
+  phone: string;
+  linkedin: string;
+  github: string;
+  avatar: string;
+}
+
+async function getBusinessCard(username: string): Promise<UserCard> {
   try {
     const card = await kv.get(`card:${username}`)
     if (!card) {
       throw new Error('Business card not found')
     }
-    return card
+    return card as UserCard
   } catch (error) {
     console.error('Error fetching business card:', error)
     throw error
   }
 }
 
-export default async function BusinessCard({ params }: Props) {
+// Remove any Params import, just use this simple type
+type Props = {
+  params: { username: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export default async function Page({ params }: Props) {
   try {
     const businessCard = await getBusinessCard(params.username)
     
@@ -39,14 +51,14 @@ export default async function BusinessCard({ params }: Props) {
             <div className="bg-gradient-to-r from-blue-600 to-indigo-700 px-6 py-8 text-center">
               <img
                 src={businessCard.avatar}
-                alt={businessCard.name}
+                alt={businessCard.username}
                 className="w-32 h-32 rounded-full mx-auto border-4 border-white shadow-lg"
               />
               <h1 className="text-2xl font-bold text-white mt-4">
-                {businessCard.name}
+                {businessCard.username}
               </h1>
               <p className="text-blue-100">
-                {businessCard.title} at {businessCard.company}
+                {businessCard.title}
               </p>
             </div>
 
