@@ -8,6 +8,7 @@ type FormData = {
   email: string;
 };
 
+
 export default function ContactForm({ onClose, client }: { onClose: () => void, client: string }) {
   const [formData, setFormData] = useState<FormData>({
     name: '',

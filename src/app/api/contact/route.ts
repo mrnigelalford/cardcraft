@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/db';
+import { db } from '@/lib/db';
 import { ContactFormData } from '@/types/business-card';
 
 export async function POST(request: Request) {
@@ -8,19 +8,16 @@ export async function POST(request: Request) {
     const { cardId, ...formData } = body as ContactFormData & { cardId: string };
 
     // Get business card owner's details
-    const businessCard = await prisma.businessCard.findUnique({
-      where: { id: cardId },
-      include: {
-        user: true,
-      },
-    });
-
-    if (!businessCard) {
+    const result = await db.getBusinessCardWithUser(cardId);
+    
+    if (!result) {
       return NextResponse.json(
         { message: 'Business card not found' },
         { status: 404 }
       );
     }
+
+    const { businessCard, user } = result;
 
     // Send data to Zapier webhook for Google Sheets
     const zapierWebhookUrl = process.env.ZAPIER_WEBHOOK_URL;
@@ -32,7 +29,7 @@ export async function POST(request: Request) {
         },
         body: JSON.stringify({
           timestamp: new Date().toISOString(),
-          cardOwner: businessCard.user.email,
+          cardOwner: user.email,
           ...formData,
         }),
       });
@@ -45,7 +42,7 @@ export async function POST(request: Request) {
       // Get calendar booking link from environment variables or generate one
       calendarLink = process.env.CALENDAR_BOOKING_URL?.replace(
         '{email}',
-        businessCard.user.email
+        user.email
       );
     }
 
